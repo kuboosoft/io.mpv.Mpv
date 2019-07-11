@@ -14,6 +14,7 @@ before_install:
     cd /root;
     ldconfig
     ls -sf /usr/share/defaults/etc/ld.so.cache /etc/ld.so.cache
+    gcc --version
     swupd bundle-add flatpak python3-basic c-basic package-utils firmware-update fuse;
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo;
     flatpak install -y flathub org.freedesktop.Sdk/x86_64/18.08;
