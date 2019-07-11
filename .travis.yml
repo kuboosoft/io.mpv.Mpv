@@ -10,10 +10,10 @@ services:
  
 before_install:
   - |
-    cat <<EOF  > matplotlibrc
-    backend : Template
+    cat <<EOF  > build.sh
+    echo START
     EOF
-  - cat matplotlibrc
+  - cat build.sh
   
   
   
