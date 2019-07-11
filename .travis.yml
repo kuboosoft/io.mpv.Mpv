@@ -11,15 +11,16 @@ services:
 script:
   - >
     docker run -v $(pwd):/root/ --privileged --cap-add=ALL clearlinux:latest /bin/sh -- <<EOF
-    cd /root; swupd bundle-add flatpak python3-basic c-basic package-utils firmware-update fuse
-    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    flatpak install -y flathub org.freedesktop.Sdk/x86_64/18.08
-    flatpak install -y flathub org.freedesktop.Platform/x86_64/18.08
-    flatpak-builder --repo=repo --force-clean builds io.mpv.Mpv.json org.luajit.Luajit.json
-    flatpak --user remote-add --no-gpg-verify --if-not-exists repo mpv
-    flatpak install -y repo io.mpv.Mpv
-    flatpak update -y io.mpv.Mpv
+    cd /root; swupd bundle-add flatpak python3-basic c-basic package-utils firmware-update fuse;
+    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo;
+    flatpak install -y flathub org.freedesktop.Sdk/x86_64/18.08;
+    flatpak install -y flathub org.freedesktop.Platform/x86_64/18.08;
+    flatpak-builder --repo=repo --force-clean builds io.mpv.Mpv.json org.luajit.Luajit.json;
+    flatpak --user remote-add --no-gpg-verify --if-not-exists repo mpv;
+    flatpak install -y repo io.mpv.Mpv;
+    flatpak update -y io.mpv.Mpv;
     EOF
+    
 
 before_deploy:
   - tar --exclude=.lock -zcf repo.tar.gz repo
