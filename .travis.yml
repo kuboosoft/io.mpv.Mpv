@@ -11,7 +11,7 @@ services:
 before_install:
   - >
     cat <<EOF >> build.sh
-    #!/bin/bash
+    \#!/bin/bash
     cd /root
     swupd bundle-add flatpak python3-basic c-basic package-utils firmware-update fuse
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo;
@@ -23,6 +23,8 @@ before_install:
     flatpak update -y io.mpv.Mpv;
     EOF
   - chmod +x build.sh
+  - stat build.sh
+  - cat build.sh
   
   
   
