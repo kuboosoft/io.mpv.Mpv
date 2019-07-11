@@ -12,7 +12,7 @@ before_install:
   - |
     cat <<EOF  > build.sh
     echo START
-    EOF
+    echo END
   - cat build.sh
   
   
