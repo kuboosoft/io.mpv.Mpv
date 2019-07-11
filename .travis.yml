@@ -17,7 +17,7 @@ before_install:
     flatpak install -y flathub org.freedesktop.Sdk/x86_64/18.08;
     flatpak install -y flathub org.freedesktop.Platform/x86_64/18.08;
     flatpak-builder --repo=repo --force-clean builds io.mpv.Mpv.json org.luajit.Luajit.json;
-    flatpak --user remote-add --no-gpg-verify --if-not-exists repo mpv;
+    flatpak --user remote-add --no-gpg-verify --if-not-exists repo repo;
     flatpak install -y repo io.mpv.Mpv;
    
 script:
