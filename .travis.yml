@@ -9,7 +9,7 @@ services:
   - docker
  
 script:
-- docker run -v $(pwd):/root/ --privileged --cap-add=ALL clearlinux:latest /bin/bash -c \
+- docker run -v $(pwd):/root/ --privileged --cap-add=ALL clearlinux:latest /bin/sh -c \
     "cd /root; swupd bundle-add flatpak python3-basic c-basic package-utils firmware-update fuse; \
      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo \
      flatpak install -y flathub org.freedesktop.Sdk/x86_64/18.08 \
