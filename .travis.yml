@@ -9,7 +9,7 @@ services:
   - docker
  
 before_install:  |
-    cat <<EOF >> build.sh
+  - cat <<EOF >> build.sh
     cd /root;
     swupd bundle-add flatpak python3-basic c-basic package-utils firmware-update fuse;
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo;
