@@ -20,7 +20,7 @@
       "buildsystem": "simple",
       "cleanup": ["/include", "/lib/pkgconfig"],
       "build-commands": [
-        "python3 waf configure --prefix=/app --disable-build-date --disable-oss-audio --disable-alsa --enable-tv",
+        "python3 waf configure --prefix=/app --disable-build-date --disable-oss-audio --disable-alsa --enable-tv --enable-wayland --enable-wayland-scanner --enable-wayland-protocols --enable-gl-wayland --enable-vaapi-wayland",
         "python3 waf build",
         "python3 waf install"
       ],
