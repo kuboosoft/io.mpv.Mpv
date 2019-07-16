@@ -22,11 +22,11 @@
       "buildsystem": "simple",
       "cleanup": ["/include", "/lib/pkgconfig"],
       "build-commands": [
-        "python3 waf configure --prefix=/app --disable-build-date --disable-oss-audio --disable-alsa --enable-tv",
+        "python3 waf configure --prefix=/app --disable-build-date --disable-oss-audio --disable-alsa --enable-tv --disable-manpage-build --disable-debug-build",
         "python3 waf build",
         "python3 waf install"
       ],
-      "post-install": [
+      "post-install": [ 
         "install -D -m644 io.mpv.Mpv.appdata.xml /app/share/appdata/io.mpv.Mpv.appdata.xml"
       ],
       "sources": [
@@ -76,11 +76,15 @@
             "--disable-static",
             "--enable-gnutls",
             "--disable-doc",
-            "--disable-programs",
+            "--disable-manpages",
             "--disable-encoders",
             "--disable-muxers",
             "--enable-encoder=png",
-            "--enable-libv4l2"
+            "--enable-libv4l2",
+            "--enable-gpl",
+            "--enable-nonfree",
+            "--enable-opengl",
+            "--enable-vaapi"
           ],
           "sources": [
             {
