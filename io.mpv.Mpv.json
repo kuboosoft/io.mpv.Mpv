@@ -74,11 +74,15 @@
             "--disable-static",
             "--enable-gnutls",
             "--disable-doc",
-            "--disable-programs",
+            "--disable-manpages",
             "--disable-encoders",
             "--disable-muxers",
             "--enable-encoder=png",
-            "--enable-libv4l2"
+            "--enable-libv4l2",
+            "--enable-gpl",
+            "--enable-nonfree",
+            "--enable-opengl",
+            "--enable-vaapi"
           ],
           "sources": [
             {
