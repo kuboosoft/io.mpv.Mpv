@@ -3,7 +3,7 @@
 ### How to install
 
 ```
-# download latest repo.tar.gz [here](https://github.com/flatworp/io.mpv.Mpv/releases)
+# download latest repo.tar.gz here - https://github.com/flatworp/io.mpv.Mpv/releases
 tar xvfz repo.tar.gz`
 flatpak --user remote-add --no-gpg-verify --if-not-exists repo repo
 flatpak install -y repo io.mpv.Mpv
